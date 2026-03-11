@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onyeuba Ebuka — Product Manager | Fintech</title>
+<meta name="description" content="Product Manager specializing in fintech and digital products. Building user-centred solutions in the African market.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080808;--black-2:#111111;--black-3:#1a1a1a;
+  --gold:#C9A14A;--gold-light:#E5C97E;--gold-dim:#8a6d2f;
+  --white:#F5F0E8;--white-dim:#A89F8C;
+  --border:rgba(201,161,74,0.2);--border-strong:rgba(201,161,74,0.5);
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Jost',sans-serif;
+  --font-accent:'Bebas Neue',sans-serif;
+  --nav-h:72px;--max-w:1200px;
+  --ease:cubic-bezier(0.25,0.46,0.45,0.94);
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:2px}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 40px;background:rgba(8,8,8,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.4s}
+.logo{font-family:var(--font-accent);font-size:1.6rem;letter-spacing:0.12em;color:var(--gold);text-decoration:none;flex-shrink:0}
+.logo span{color:var(--white)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;margin-left:auto}
+.nav-links a{color:var(--white-dim);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.3s;position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width 0.35s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{margin-left:2.5rem;padding:9px 22px;border:1px solid var(--gold);color:var(--gold);font-size:0.75rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}
+.nav-cta:hover{background:var(--gold);color:var(--black)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;margin-left:auto;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all 0.35s}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(8,8,8,0.98);padding:2rem;border-bottom:1px solid var(--border);z-index:999;flex-direction:column;gap:1.5rem}
+.mobile-menu a{color:var(--white-dim);text-decoration:none;font-size:1.1rem;border-bottom:1px solid var(--border);padding-bottom:1rem;transition:color 0.3s}
+.mobile-menu a:hover{color:var(--gold)}
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:0 40px;max-width:var(--max-w);margin:0 auto;gap:4rem;padding-top:var(--nav-h)}
+.hero-content{padding:80px 0}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:2rem}
+.hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--gold)}
+.hero-eyebrow span{font-size:0.72rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold)}
+.hero-name{font-family:var(--font-display);font-size:clamp(3rem,7vw,6.5rem);font-weight:300;line-height:0.95;letter-spacing:-0.02em;margin-bottom:0.3em}
+.hero-name .first{display:block}
+.hero-name .last{display:block;font-style:italic;color:var(--gold-light)}
+.hero-role{font-family:var(--font-accent);font-size:1rem;letter-spacing:0.3em;color:var(--white-dim);margin:1.8rem 0 2.2rem;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.hero-tagline{font-size:1.05rem;color:var(--white-dim);line-height:1.85;max-width:420px;margin-bottom:3rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;font-family:var(--font-body);font-size:0.78rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:all 0.35s}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-outline{border:1px solid var(--border-strong);color:var(--white);background:transparent}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+/* PHOTO */
+.hero-visual{display:flex;justify-content:center;align-items:center}
+.photo-frame{position:relative;width:100%;max-width:420px}
+.photo-frame::before{content:'';position:absolute;top:-16px;right:-16px;bottom:16px;left:16px;border:1px solid var(--border-strong);z-index:0;pointer-events:none}
+.photo-frame img,.photo-frame .img-ph{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;position:relative;z-index:1}
+.img-ph{background:var(--black-3);border:1px dashed var(--border-strong);flex-direction:column;align-items:center;justify-content:center;color:var(--white-dim);font-size:0.75rem;text-align:center;padding:20px;gap:8px}
+.photo-badge{position:absolute;bottom:-20px;left:-20px;background:var(--gold);color:var(--black);padding:16px 22px;z-index:2}
+.photo-badge .num{font-family:var(--font-display);font-size:2.4rem;font-weight:600;line-height:1;display:block}
+.photo-badge .lbl{font-size:0.65rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase}
+/* STATS */
+.stats-strip{background:var(--black-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:50px 40px}
+.stats-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.stat{border-right:1px solid var(--border);padding-right:2rem}
+.stat:last-child{border-right:none}
+.stat-num{font-family:var(--font-display);font-size:3.2rem;font-weight:300;color:var(--gold);line-height:1;display:block}
+.stat-label{font-size:0.78rem;letter-spacing:0.12em;color:var(--white-dim);margin-top:0.5rem;text-transform:uppercase}
+/* SECTION */
+.section{padding:80px 40px;max-width:var(--max-w);margin:0 auto}
+.section-label{font-size:0.72rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.8rem}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;margin-bottom:3rem}
+.section-title em{font-style:italic;color:var(--gold-light)}
+/* PROJECTS GRID */
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:2rem}
+.project-card{background:var(--black-2);border:1px solid var(--border);padding:36px 32px;position:relative;overflow:hidden;transition:all 0.4s;text-decoration:none;color:inherit;display:block}
+.project-card:hover{border-color:var(--border-strong);transform:translateY(-6px)}
+.project-num{font-family:var(--font-display);font-size:5rem;font-weight:300;color:rgba(201,161,74,0.08);position:absolute;top:-10px;right:16px;line-height:1;pointer-events:none}
+.project-type{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block}
+.project-title{font-family:var(--font-display);font-size:1.6rem;font-weight:400;line-height:1.2;margin-bottom:1rem}
+.project-desc{font-size:0.88rem;color:var(--white-dim);line-height:1.75;margin-bottom:1.8rem}
+.project-link{font-size:0.75rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:8px;transition:gap 0.3s}
+.project-card:hover .project-link{gap:14px}
+/* ABOUT TEASER */
+.about-teaser{background:var(--black-3);border:1px solid var(--border);padding:70px 60px;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:2rem}
+.quote-block{font-family:var(--font-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;font-style:italic;line-height:1.5;position:relative;padding-left:2rem}
+.quote-block::before{content:'"';position:absolute;left:-10px;top:-20px;font-size:6rem;color:var(--gold);opacity:0.3;font-family:var(--font-display);line-height:1}
+.about-body{font-size:0.95rem;color:var(--white-dim);line-height:1.85}
+.about-body p+p{margin-top:1rem}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:60px 40px 40px;max-width:var(--max-w);margin:0 auto}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;flex-wrap:wrap;margin-bottom:3rem}
+.footer-logo{font-family:var(--font-accent);font-size:1.5rem;letter-spacing:0.1em;color:var(--gold)}
+.footer-logo span{color:var(--white)}
+.footer-tagline{font-size:0.82rem;color:var(--white-dim);margin-top:0.5rem}
+.footer-links{display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:var(--white-dim);text-decoration:none;font-size:0.82rem;transition:color 0.3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-socials{display:flex;gap:1rem;margin-top:1.2rem}
+.footer-socials a{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--white-dim);text-decoration:none;font-size:0.8rem;transition:all 0.3s}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.74rem;color:var(--white-dim)}
+/* ANIM */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.fu{opacity:0;animation:fadeUp 0.8s ease forwards}
+.d1{animation-delay:0.1s}.d2{animation-delay:0.25s}.d3{animation-delay:0.4s}.d4{animation-delay:0.55s}
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .hero{grid-template-columns:1fr;padding-top:calc(var(--nav-h)+40px)}
+  .hero-visual{order:-1}
+  .photo-frame{max-width:280px}
+  .projects-grid{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat{border-right:none;border-bottom:1px solid var(--border);padding:0 0 1.5rem}
+  .about-teaser{grid-template-columns:1fr;padding:48px 32px;gap:2rem}
+}
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .section,.page-header{padding-left:24px;padding-right:24px}
+  footer{padding-left:24px;padding-right:24px}
+  .stats-strip{padding:40px 24px}
+}
+@media(max-width:600px){nav{padding:0 24px}.hero{padding-left:24px;padding-right:24px}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="logo">EO<span>G</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="awards.html">Awards</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Hire Me</a>
+  <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="experience.html">Experience</a>
+  <a href="awards.html">Awards</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" style="color:var(--gold)">Hire Me →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow fu"><span>Product Manager · Fintech</span></div>
+    <h1 class="hero-name fu d1">
+      <span class="first">Onyeuba</span>
+      <span class="last">Ebuka</span>
+    </h1>
+    <p class="hero-role fu d2">
+      Digital Products <span class="dot"></span>
+      Fintech <span class="dot"></span>
+      Crypto <span class="dot"></span>
+      Africa
+    </p>
+    <p class="hero-tagline fu d3">Building user-centred products that solve real problems — from crypto exchanges to youth banking, at the heart of Africa's digital economy.</p>
+    <div class="hero-actions fu d4">
+      <a href="projects.html" class="btn btn-gold">View My Work →</a>
+      <a href="contact.html" class="btn btn-outline">Let's Talk</a>
+    </div>
+  </div>
+
+  <div class="hero-visual fu d2">
+    <div class="photo-frame">
+      <!-- TO ADD YOUR PHOTO: replace the div below with:
+           <img src="profile.jpg" alt="Onyeuba Ebuka Godwin"> -->
+      <div class="img-ph" style="display:flex;aspect-ratio:3/4">
+        <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Add profile.jpg<br>to project folder</span>
+      </div>
+      <div class="photo-badge">
+        <span class="num">3+</span>
+        <span class="lbl">Years Building<br>Fintech Products</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">6+</span><p class="stat-label">PM Projects Delivered</p></div>
+    <div class="stat"><span class="stat-num">7</span><p class="stat-label">Industry Awards</p></div>
+    <div class="stat"><span class="stat-num">3+</span><p class="stat-label">Years in Fintech</p></div>
+    <div class="stat"><span class="stat-num">NG·UK·EU</span><p class="stat-label">Open to Work Globally</p></div>
+  </div>
+</div>
+
+<!-- FEATURED PROJECTS -->
+<div class="section">
+  <span class="section-label">Selected Work</span>
+  <h2 class="section-title">Products I've <em>Built &amp; Led</em></h2>
+  <div class="projects-grid">
+    <a href="projects.html#acedxtrades" class="project-card">
+      <span class="project-num">01</span>
+      <span class="project-type">Fintech · Crypto Exchange</span>
+      <h3 class="project-title">Aced Xtrades App</h3>
+      <p class="project-desc">Founded and led end-to-end product lifecycle of a crypto &amp; gift card exchange from ideation to launch.</p>
+      <span class="project-link">View Case Study →</span>
+    </a>
+    <a href="projects.html#kudateen" class="project-card">
+      <span class="project-num">02</span>
+      <span class="project-type">Banking · Youth Finance · Course Project</span>
+      <h3 class="project-title">Kuda Teen Debit Card</h3>
+      <p class="project-desc">Conceptualized a prepaid debit card for teens aged 11–18 inside the Kuda app with full guardian controls.</p>
+      <span class="project-link">View Case Study →</span>
+    </a>
+    <a href="projects.html#moniepoint" class="project-card">
+      <span class="project-num">03</span>
+      <span class="project-type">Product Analysis · Fintech</span>
+      <h3 class="project-title">Moniepoint Teardown</h3>
+      <p class="project-desc">In-depth product teardown of Nigeria's leading merchant banking platform across five key dimensions.</p>
+      <span class="project-link">Read Analysis →</span>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:3rem">
+    <a href="projects.html" class="btn btn-outline">See All Projects →</a>
+  </div>
+</div>
+
+<!-- ABOUT TEASER -->
+<div class="section" style="padding-top:0">
+  <div class="about-teaser">
+    <blockquote class="quote-block">I build products that put the user first — especially in markets where access, trust, and speed are everything.</blockquote>
+    <div class="about-body">
+      <p>I'm a Product Manager with hands-on experience delivering fintech and digital products across Nigeria. My background blends structured product thinking with strong execution skills built across media, broadcasting, and legislative operations.</p>
+      <p>Currently building at the intersection of crypto, youth finance, and African digital payments.</p>
+      <div style="margin-top:2rem"><a href="about.html" class="btn btn-outline">Learn More →</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">EO<span>G</span></div>
+      <p class="footer-tagline">Product Manager · Fintech · Digital Products</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/onyeuba-ebuka-3a1aba2b9" target="_blank">in</a>
+        <a href="https://x.com/acedxboss" target="_blank">𝕏</a>
+        <a href="https://instagram.com/acedxboss" target="_blank">IG</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Navigation</p>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="awards.html">Awards</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Get In Touch</p>
+      <div class="footer-links">
+        <a href="mailto:ebukaonyeuba1@gmail.com">ebukaonyeuba1@gmail.com</a>
+        <a href="tel:+2349047184440">+234 904 718 4440</a>
+        <a href="contact.html">Send a Message →</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Onyeuba Ebuka Godwin. All rights reserved.</p>
+    <p style="color:var(--gold-dim)">Lagos, Nigeria · Open to NG · UK · EU · Remote</p>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+document.getElementById('hbg').addEventListener('click',function(){
+  this.classList.toggle('open');
+  var m=document.getElementById('mobileMenu');
+  m.style.display=this.classList.contains('open')?'flex':'none';
+});
+// Nav shadow on scroll
+window.addEventListener('scroll',function(){
+  document.getElementById('mainNav').style.boxShadow=window.scrollY>20?'0 8px 40px rgba(0,0,0,0.8)':'none';
+},{passive:true});
+</script>
+</body>
+</html>

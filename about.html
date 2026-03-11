@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Onyeuba Ebuka | PM Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#080808;--black-2:#111111;--black-3:#1a1a1a;
+  --gold:#C9A14A;--gold-light:#E5C97E;--gold-dim:#8a6d2f;
+  --white:#F5F0E8;--white-dim:#A89F8C;
+  --border:rgba(201,161,74,0.2);--border-strong:rgba(201,161,74,0.5);
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Jost',sans-serif;
+  --font-accent:'Bebas Neue',sans-serif;
+  --nav-h:72px;--max-w:1200px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:2px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 40px;background:rgba(8,8,8,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.4s}
+.logo{font-family:var(--font-accent);font-size:1.6rem;letter-spacing:0.12em;color:var(--gold);text-decoration:none}
+.logo span{color:var(--white)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;margin-left:auto}
+.nav-links a{color:var(--white-dim);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.3s;position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width 0.35s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{margin-left:2.5rem;padding:9px 22px;border:1px solid var(--gold);color:var(--gold);font-size:0.75rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}
+.nav-cta:hover{background:var(--gold);color:var(--black)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;margin-left:auto;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all 0.35s}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(8,8,8,0.98);padding:2rem;border-bottom:1px solid var(--border);z-index:999;flex-direction:column;gap:1.5rem}
+.mobile-menu a{color:var(--white-dim);text-decoration:none;font-size:1.1rem;border-bottom:1px solid var(--border);padding-bottom:1rem;transition:color 0.3s}
+.mobile-menu a:hover{color:var(--gold)}
+.page-header{padding:calc(var(--nav-h) + 80px) 40px 60px;max-width:var(--max-w);margin:0 auto}
+.page-label{font-size:0.72rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.2rem}
+.page-title{font-family:var(--font-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;line-height:1.05}
+.page-title em{font-style:italic;color:var(--gold-light)}
+.page-divider{width:80px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:1.8rem 0}
+.page-intro{font-size:1.05rem;color:var(--white-dim);max-width:560px;line-height:1.8}
+.section{padding:60px 40px 80px;max-width:var(--max-w);margin:0 auto}
+/* ABOUT GRID */
+.about-grid{display:grid;grid-template-columns:320px 1fr;gap:5rem;align-items:start;margin-top:2rem}
+.about-photo-col{position:sticky;top:calc(var(--nav-h)+40px)}
+.about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border)}
+.img-ph{background:var(--black-3);border:1px dashed var(--border-strong);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--white-dim);font-size:0.75rem;text-align:center;padding:20px;gap:8px}
+.about-location{margin-top:1.5rem;font-size:0.8rem;color:var(--white-dim);display:flex;align-items:center;gap:8px}
+.about-location::before{content:'◆';color:var(--gold);font-size:0.5rem}
+.contact-quick{margin-top:1.5rem;display:flex;flex-direction:column;gap:0.7rem}
+.ci{display:flex;align-items:center;gap:10px;font-size:0.8rem;color:var(--white-dim);text-decoration:none;transition:color 0.3s}
+.ci:hover{color:var(--gold)}
+.ci-icon{color:var(--gold);font-size:0.7rem;width:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;font-family:var(--font-body);font-size:0.78rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:none;transition:all 0.35s}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-outline{border:1px solid var(--border-strong);color:var(--white);background:transparent}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+/* BIO */
+.bio-text{font-size:1rem;color:var(--white-dim);line-height:1.85}
+.bio-text p+p{margin-top:1.2rem}
+/* SKILLS */
+.skills-block{margin-top:4rem}
+.skills-category{margin-bottom:2.5rem}
+.skills-category-title{font-size:0.72rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+.skills-tags{display:flex;flex-wrap:wrap;gap:0.6rem}
+.skill-tag{padding:7px 16px;border:1px solid var(--border);font-size:0.8rem;color:var(--white-dim);transition:all 0.3s;cursor:default}
+.skill-tag:hover{border-color:var(--gold-dim);color:var(--white)}
+/* EDU */
+.edu-block{margin-top:4rem}
+.sub-title{font-family:var(--font-display);font-size:1.8rem;font-weight:300;margin-bottom:0}
+.sub-title em{font-style:italic;color:var(--gold-light)}
+.sub-label{font-size:0.72rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.8rem}
+.edu-item{display:grid;grid-template-columns:90px 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border)}
+.edu-item:first-of-type{border-top:1px solid var(--border)}
+.edu-year{font-family:var(--font-display);font-size:0.9rem;color:var(--gold-dim);padding-top:4px}
+.edu-degree{font-family:var(--font-display);font-size:1.2rem;font-weight:400;margin-bottom:0.3rem}
+.edu-inst{font-size:0.85rem;color:var(--white-dim)}
+.edu-detail{font-size:0.82rem;color:var(--white-dim);margin-top:0.4rem}
+/* LEADERSHIP */
+.leadership-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+.li-item{border:1px solid var(--border);padding:20px 24px;transition:all 0.3s}
+.li-item:hover{border-color:var(--border-strong)}
+.li-title{font-size:0.9rem;font-weight:500;margin-bottom:0.4rem}
+.li-org{font-size:0.78rem;color:var(--gold)}
+.li-year{font-size:0.74rem;color:var(--white-dim);margin-top:0.3rem}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:60px 40px 40px;max-width:var(--max-w);margin:0 auto}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;flex-wrap:wrap;margin-bottom:3rem}
+.footer-logo{font-family:var(--font-accent);font-size:1.5rem;letter-spacing:0.1em;color:var(--gold)}
+.footer-logo span{color:var(--white)}
+.footer-tagline{font-size:0.82rem;color:var(--white-dim);margin-top:0.5rem}
+.footer-links{display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:var(--white-dim);text-decoration:none;font-size:0.82rem;transition:color 0.3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-socials{display:flex;gap:1rem;margin-top:1.2rem}
+.footer-socials a{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--white-dim);text-decoration:none;font-size:0.8rem;transition:all 0.3s}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.74rem;color:var(--white-dim)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.fu{opacity:0;animation:fadeUp 0.8s ease forwards}
+.d1{animation-delay:0.1s}.d2{animation-delay:0.25s}.d3{animation-delay:0.4s}
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}.hamburger{display:flex}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .about-photo-col{position:relative;top:auto;max-width:280px}
+  .section,.page-header{padding-left:24px;padding-right:24px}
+  footer{padding-left:24px;padding-right:24px}
+  .leadership-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){nav{padding:0 24px}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="logo">EO<span>G</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="awards.html">Awards</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Hire Me</a>
+  <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a>
+  <a href="experience.html">Experience</a><a href="awards.html">Awards</a><a href="contact.html">Contact</a>
+  <a href="contact.html" style="color:var(--gold)">Hire Me →</a>
+</div>
+
+<div class="page-header">
+  <span class="page-label fu">The Person Behind the Product</span>
+  <h1 class="page-title fu d1">About <em>Me</em></h1>
+  <div class="page-divider fu d2"></div>
+  <p class="page-intro fu d3">Product Manager, founder, and builder with a background spanning fintech, broadcasting, and legislative operations.</p>
+</div>
+
+<div class="section">
+  <div class="about-grid">
+    <!-- LEFT: Photo + contact -->
+    <div class="about-photo-col fu">
+      <!-- TO ADD PHOTO: replace div below with <img class="about-photo" src="profile.jpg" alt="Onyeuba Ebuka"> -->
+      <div class="img-ph" style="width:100%;aspect-ratio:3/4">
+        <svg width="32" height="32" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Add profile.jpg<br>to project folder</span>
+      </div>
+      <p class="about-location">Lagos, Nigeria · Warri, Delta State</p>
+      <div class="contact-quick">
+        <a href="mailto:ebukaonyeuba1@gmail.com" class="ci"><span class="ci-icon">✉</span>ebukaonyeuba1@gmail.com</a>
+        <a href="tel:+2349047184440" class="ci"><span class="ci-icon">✆</span>+234 904 718 4440</a>
+        <a href="https://www.linkedin.com/in/onyeuba-ebuka-3a1aba2b9" target="_blank" class="ci"><span class="ci-icon">in</span>LinkedIn Profile</a>
+        <a href="https://x.com/acedxboss" target="_blank" class="ci"><span class="ci-icon">𝕏</span>@acedxboss</a>
+        <a href="https://instagram.com/acedxboss" target="_blank" class="ci"><span class="ci-icon">IG</span>@acedxboss</a>
+      </div>
+      <div style="margin-top:2rem"><a href="contact.html" class="btn btn-gold" style="width:100%;justify-content:center">Hire Me →</a></div>
+    </div>
+
+    <!-- RIGHT: Content -->
+    <div>
+      <div class="bio-text fu d1">
+        <p>I'm Onyeuba Ebuka Godwin — a Product Manager with hands-on experience taking digital and fintech products from concept to launch. My work sits at the intersection of user needs, business goals, and technical execution.</p>
+        <p>I founded AcedXTrades in 2021, building it into a crypto and gift card exchange platform while managing the full product lifecycle — roadmapping, user research, sprint planning, and cross-functional coordination across engineering, design, marketing, and media teams.</p>
+        <p>I also designed a teen debit card concept for Kuda Microfinance Bank during my EntryLevel PM programme — a product addressing how minors aged 11–18 can access digital payments without a bank account, supervised by their parents.</p>
+        <p>Before product management, I worked in legislative operations as Chief of Staff at the National Youth Assembly of Nigeria (Delta State), and as a Radio &amp; TV Presenter at Delta Broadcasting Service — roles that sharpened my communication, stakeholder management, and deadline-driven execution.</p>
+        <p>I'm open to PM roles across Nigeria, the UK, EU, and remote-first teams. I'm particularly drawn to fintech, digital banking, and products built for the African market.</p>
+      </div>
+
+      <div class="skills-block fu d2">
+        <span class="sub-label">Core Competencies</span>
+        <h2 class="sub-title">Skills &amp; <em>Expertise</em></h2>
+        <div style="margin-top:2rem">
+          <div class="skills-category">
+            <p class="skills-category-title">Product Management</p>
+            <div class="skills-tags">
+              <span class="skill-tag">Product Discovery</span><span class="skill-tag">Roadmapping</span>
+              <span class="skill-tag">PRDs &amp; User Stories</span><span class="skill-tag">MVP Definition</span>
+              <span class="skill-tag">Feature Prioritization</span><span class="skill-tag">User Research</span>
+              <span class="skill-tag">Stakeholder Management</span><span class="skill-tag">Agile Collaboration</span>
+              <span class="skill-tag">Go-to-Market</span><span class="skill-tag">Fintech &amp; Crypto Products</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <p class="skills-category-title">Tools &amp; Frameworks</p>
+            <div class="skills-tags">
+              <span class="skill-tag">Notion</span><span class="skill-tag">Figma (Basic)</span>
+              <span class="skill-tag">Trello / Jira</span><span class="skill-tag">MoSCoW Prioritisation</span>
+              <span class="skill-tag">Affinity Mapping</span><span class="skill-tag">T-Shirt Sizing</span>
+              <span class="skill-tag">Google Workspace</span>
+            </div>
+          </div>
+          <div class="skills-category">
+            <p class="skills-category-title">Soft Skills</p>
+            <div class="skills-tags">
+              <span class="skill-tag">Communication</span><span class="skill-tag">Leadership</span>
+              <span class="skill-tag">Problem Solving</span><span class="skill-tag">Storytelling</span>
+              <span class="skill-tag">Negotiation</span><span class="skill-tag">Adaptability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-block fu d2">
+        <span class="sub-label">Education &amp; Training</span>
+        <h2 class="sub-title">Academic &amp; <em>Professional</em></h2>
+        <div class="edu-item">
+          <p class="edu-year">2019–2024</p>
+          <div><p class="edu-degree">B.Sc. Mass Communication</p><p class="edu-inst">Delta State University, Abraka · Delta State</p></div>
+        </div>
+        <div class="edu-item">
+          <p class="edu-year">2025</p>
+          <div>
+            <p class="edu-degree">Product Management — Level 1</p>
+            <p class="edu-inst">EntryLevel · 6-Week Intensive Programme</p>
+            <p class="edu-detail">Certification covering product discovery, roadmapping, user research, MVP development, and agile delivery.</p>
+          </div>
+        </div>
+        <div class="edu-item">
+          <p class="edu-year">2010–2016</p>
+          <div><p class="edu-degree">SSCE</p><p class="edu-inst">Royal Heritage Group of Schools, Effurun · Warri</p></div>
+        </div>
+      </div>
+
+      <div style="margin-top:4rem" class="fu d3">
+        <span class="sub-label">Leadership</span>
+        <h2 class="sub-title">Student &amp; <em>Community</em> Roles</h2>
+        <div class="leadership-grid">
+          <div class="li-item"><p class="li-title">General Coordinator, Pre-Degree Programme</p><p class="li-org">Delta State University</p><p class="li-year">2018 · Managed 900+ students</p></div>
+          <div class="li-item"><p class="li-title">Director of Welfare</p><p class="li-org">AMASSCOS, DELSU</p><p class="li-year">2020 · Oversaw 600+ students</p></div>
+          <div class="li-item"><p class="li-title">Student Representative Council Member</p><p class="li-org">SUG — Dept of Mass Communication</p><p class="li-year">2021</p></div>
+          <div class="li-item"><p class="li-title">Senator, Faculty of Social Sciences</p><p class="li-org">Students' Union Government, DELSU</p><p class="li-year">2022 · Represented 8 departments</p></div>
+          <div class="li-item"><p class="li-title">Senior Stakeholder / Advisory Council Chairman</p><p class="li-org">AMASSCOS, DELSU</p><p class="li-year">2023</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">EO<span>G</span></div>
+      <p class="footer-tagline">Product Manager · Fintech · Digital Products</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/onyeuba-ebuka-3a1aba2b9" target="_blank">in</a>
+        <a href="https://x.com/acedxboss" target="_blank">𝕏</a>
+        <a href="https://instagram.com/acedxboss" target="_blank">IG</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Navigation</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a><a href="awards.html">Awards</a><a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Get In Touch</p>
+      <div class="footer-links">
+        <a href="mailto:ebukaonyeuba1@gmail.com">ebukaonyeuba1@gmail.com</a>
+        <a href="contact.html">Send a Message →</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Onyeuba Ebuka Godwin. All rights reserved.</p>
+    <p style="color:var(--gold-dim)">Lagos · Open to NG · UK · EU · Remote</p>
+  </div>
+</footer>
+<script>
+document.getElementById('hbg').addEventListener('click',function(){
+  this.classList.toggle('open');
+  var m=document.getElementById('mobileMenu');
+  m.style.display=this.classList.contains('open')?'flex':'none';
+});
+window.addEventListener('scroll',function(){
+  document.getElementById('mainNav').style.boxShadow=window.scrollY>20?'0 8px 40px rgba(0,0,0,0.8)':'none';
+},{passive:true});
+</script>
+</body>
+</html>

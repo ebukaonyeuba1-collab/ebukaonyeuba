@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — Onyeuba Ebuka | PM Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#080808;--black-2:#111111;--black-3:#1a1a1a;--gold:#C9A14A;--gold-light:#E5C97E;--gold-dim:#8a6d2f;--white:#F5F0E8;--white-dim:#A89F8C;--border:rgba(201,161,74,0.2);--border-strong:rgba(201,161,74,0.5);--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'Jost',sans-serif;--font-accent:'Bebas Neue',sans-serif;--nav-h:72px;--max-w:1200px}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:2px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav-h);display:flex;align-items:center;padding:0 40px;background:rgba(8,8,8,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:box-shadow 0.4s}
+.logo{font-family:var(--font-accent);font-size:1.6rem;letter-spacing:0.12em;color:var(--gold);text-decoration:none}
+.logo span{color:var(--white)}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;margin-left:auto}
+.nav-links a{color:var(--white-dim);text-decoration:none;font-size:0.78rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;transition:color 0.3s;position:relative;padding-bottom:4px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width 0.35s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-cta{margin-left:2.5rem;padding:9px 22px;border:1px solid var(--gold);color:var(--gold);font-size:0.75rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:all 0.3s}
+.nav-cta:hover{background:var(--gold);color:var(--black)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;margin-left:auto;padding:4px;background:none;border:none}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--white);transition:all 0.35s}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(8,8,8,0.98);padding:2rem;border-bottom:1px solid var(--border);z-index:999;flex-direction:column;gap:1.5rem}
+.mobile-menu a{color:var(--white-dim);text-decoration:none;font-size:1.1rem;border-bottom:1px solid var(--border);padding-bottom:1rem;transition:color 0.3s}
+.mobile-menu a:hover{color:var(--gold)}
+.page-header{padding:calc(var(--nav-h)+80px) 40px 60px;max-width:var(--max-w);margin:0 auto}
+.page-label{font-size:0.72rem;font-weight:500;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.2rem}
+.page-title{font-family:var(--font-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;line-height:1.05}
+.page-title em{font-style:italic;color:var(--gold-light)}
+.page-divider{width:80px;height:1px;background:linear-gradient(to right,var(--gold),transparent);margin:1.8rem 0}
+.page-intro{font-size:1.05rem;color:var(--white-dim);max-width:560px;line-height:1.8}
+.section{padding:0 40px 80px;max-width:var(--max-w);margin:0 auto}
+/* TIMELINE */
+.timeline{position:relative;margin-top:2rem}
+.timeline::before{content:'';position:absolute;left:130px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--gold),transparent)}
+.tl-item{display:grid;grid-template-columns:130px 1fr;gap:0;padding-bottom:4rem;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-year{padding-right:2.5rem;padding-top:4px;text-align:right}
+.tl-year span{font-family:var(--font-display);font-size:0.85rem;color:var(--gold-dim);display:block;line-height:1.5}
+.tl-dot{position:absolute;left:122px;top:8px;width:18px;height:18px;border:1px solid var(--gold);background:var(--black);transform:rotate(45deg);transition:background 0.3s}
+.tl-item:hover .tl-dot{background:var(--gold)}
+.tl-content{padding-left:2.5rem}
+.tl-company{font-size:0.72rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tl-loc{color:var(--white-dim);font-size:0.68rem;letter-spacing:0.12em}
+.tl-role{font-family:var(--font-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:300;margin-bottom:1.2rem;line-height:1.2}
+.tl-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.tl-list li{font-size:0.88rem;color:var(--white-dim);line-height:1.7;padding-left:18px;position:relative}
+.tl-list li::before{content:'◆';position:absolute;left:0;color:var(--gold);font-size:0.4rem;top:8px}
+/* SECTION HEADER */
+.exp-sep{display:flex;align-items:center;gap:2rem;margin:4rem 0 3rem}
+.exp-sep h2{font-family:var(--font-display);font-size:1rem;font-weight:300;letter-spacing:0.22em;text-transform:uppercase;color:var(--white-dim);white-space:nowrap}
+.exp-sep::after{content:'';flex:1;height:1px;background:var(--border)}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:60px 40px 40px;max-width:var(--max-w);margin:0 auto}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:3rem;flex-wrap:wrap;margin-bottom:3rem}
+.footer-logo{font-family:var(--font-accent);font-size:1.5rem;letter-spacing:0.1em;color:var(--gold)}
+.footer-logo span{color:var(--white)}
+.footer-tagline{font-size:0.82rem;color:var(--white-dim);margin-top:0.5rem}
+.footer-links{display:flex;flex-direction:column;gap:0.6rem}
+.footer-links a{color:var(--white-dim);text-decoration:none;font-size:0.82rem;transition:color 0.3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-socials{display:flex;gap:1rem;margin-top:1.2rem}
+.footer-socials a{width:38px;height:38px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--white-dim);text-decoration:none;font-size:0.8rem;transition:all 0.3s}
+.footer-socials a:hover{border-color:var(--gold);color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.74rem;color:var(--white-dim)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.fu{opacity:0;animation:fadeUp 0.8s ease forwards}
+.d1{animation-delay:0.1s}.d2{animation-delay:0.25s}.d3{animation-delay:0.4s}
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none}.hamburger{display:flex}
+  .timeline::before{left:0}
+  .tl-item{grid-template-columns:1fr}
+  .tl-year{text-align:left;padding:0 0 0.5rem}
+  .tl-dot{display:none}
+  .tl-content{padding-left:0}
+  .section,.page-header{padding-left:24px;padding-right:24px}
+  footer{padding-left:24px;padding-right:24px}
+}
+@media(max-width:600px){nav{padding:0 24px}.footer-inner{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a href="index.html" class="logo">EO<span>G</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li><li><a href="experience.html" class="active">Experience</a></li>
+    <li><a href="awards.html">Awards</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Hire Me</a>
+  <button class="hamburger" id="hbg"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a>
+  <a href="experience.html">Experience</a><a href="awards.html">Awards</a><a href="contact.html">Contact</a>
+  <a href="contact.html" style="color:var(--gold)">Hire Me →</a>
+</div>
+
+<div class="page-header">
+  <span class="page-label fu">Professional Journey</span>
+  <h1 class="page-title fu d1">Work <em>Experience</em></h1>
+  <div class="page-divider fu d2"></div>
+  <p class="page-intro fu d3">From founding a fintech startup to legislative operations and broadcasting — a career built on execution, communication, and leading people.</p>
+</div>
+
+<div class="section">
+  <div class="exp-sep"><h2>Professional Experience</h2></div>
+
+  <div class="timeline">
+    <div class="tl-item fu">
+      <div class="tl-year"><span>Sep 2023<br>— Present</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">AcedXTrades Ltd <span class="tl-loc">· Remote, Lagos</span></p>
+        <h3 class="tl-role">Founder &amp; Product Manager</h3>
+        <ul class="tl-list">
+          <li>Led end-to-end product lifecycle of a crypto exchange app from ideation to launch</li>
+          <li>Defined product vision, roadmap, and feature priorities aligned with user and business goals</li>
+          <li>Translated requirements into PRDs and user stories for engineering and design teams</li>
+          <li>Designed user flows for crypto trading and gift card exchange experiences</li>
+          <li>Coordinated cross-functional team: developers, designers, marketers, and media</li>
+          <li>Managed user feedback loops and drove feature iterations based on real usage data</li>
+          <li>Supported partnerships, investor relations, and go-to-market execution</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item fu d1">
+      <div class="tl-year"><span>Dec 2021<br>— Present</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">AcedXTrades Ltd <span class="tl-loc">· Warri, Delta</span></p>
+        <h3 class="tl-role">Chief Executive Officer</h3>
+        <ul class="tl-list">
+          <li>Set strategic vision and drove product innovation across the platform</li>
+          <li>Oversaw operations across technology, marketing, compliance, and customer experience</li>
+          <li>Drove partnerships, investor relations, and revenue expansion initiatives</li>
+          <li>Built and managed high-performing cross-functional teams</li>
+          <li>Set performance metrics and ensured long-term business scalability</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item fu d2">
+      <div class="tl-year"><span>Feb 2022<br>— Jul 2023</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">National Youth Assembly of Nigeria (NYAN) — Delta State <span class="tl-loc">· Asaba</span></p>
+        <h3 class="tl-role">Chief of Staff to the Speaker</h3>
+        <ul class="tl-list">
+          <li>Coordinated legislative aides and managed daily operational activities for the Speaker's office</li>
+          <li>Managed complex schedules, logistics, and multiple parallel projects under tight deadlines</li>
+          <li>Served as the central communication link between stakeholders, leadership, and execution teams</li>
+          <li>Enhanced workflow efficiency through structured task coordination and prioritisation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tl-item fu d3">
+      <div class="tl-year"><span>Nov 2021<br>— Jan 2023</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">Delta Broadcasting Service <span class="tl-loc">· Warri, Delta</span></p>
+        <h3 class="tl-role">Radio &amp; TV Presenter (Intern)</h3>
+        <ul class="tl-list">
+          <li>Anchored radio programmes and co-hosted TV music shows for a live audience</li>
+          <li>Handled live TV news reporting, field coverage, and studio broadcast production</li>
+          <li>Developed communication, storytelling, and audience engagement skills in deadline-driven environments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="exp-sep" style="margin-top:6rem"><h2>Student Leadership</h2></div>
+
+  <div class="timeline">
+    <div class="tl-item fu">
+      <div class="tl-year"><span>2023</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">AMASSCOS, Delta State University</p>
+        <h3 class="tl-role">Senior Stakeholder &amp; Advisory Council Chairman</h3>
+      </div>
+    </div>
+    <div class="tl-item fu d1">
+      <div class="tl-year"><span>2022</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">Students' Union Government, DELSU — Faculty of Social Sciences</p>
+        <h3 class="tl-role">Senator</h3>
+        <ul class="tl-list"><li>Represented 8 departments as Faculty Senator in legislative sessions and policy deliberations</li></ul>
+      </div>
+    </div>
+    <div class="tl-item fu d2">
+      <div class="tl-year"><span>2021</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">SUG — Dept of Mass Communication, DELSU</p>
+        <h3 class="tl-role">Student Representative Council Member</h3>
+      </div>
+    </div>
+    <div class="tl-item fu d3">
+      <div class="tl-year"><span>2020</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">AMASSCOS, Delta State University</p>
+        <h3 class="tl-role">Director of Welfare</h3>
+        <ul class="tl-list"><li>Oversaw welfare coordination and student wellbeing for 600+ AMASSCOS members</li></ul>
+      </div>
+    </div>
+    <div class="tl-item fu d3">
+      <div class="tl-year"><span>2018</span></div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <p class="tl-company">Delta State University</p>
+        <h3 class="tl-role">General Coordinator — Pre-Degree Programme</h3>
+        <ul class="tl-list"><li>Managed coordination and welfare for 900+ pre-degree students</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">EO<span>G</span></div>
+      <p class="footer-tagline">Product Manager · Fintech · Digital Products</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/onyeuba-ebuka-3a1aba2b9" target="_blank">in</a>
+        <a href="https://x.com/acedxboss" target="_blank">𝕏</a>
+        <a href="https://instagram.com/acedxboss" target="_blank">IG</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Navigation</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="awards.html">Awards</a><a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Get In Touch</p>
+      <div class="footer-links">
+        <a href="mailto:ebukaonyeuba1@gmail.com">ebukaonyeuba1@gmail.com</a>
+        <a href="contact.html">Send a Message →</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Onyeuba Ebuka Godwin. All rights reserved.</p>
+    <p style="color:var(--gold-dim)">Lagos · Open to NG · UK · EU · Remote</p>
+  </div>
+</footer>
+<script>
+document.getElementById('hbg').addEventListener('click',function(){
+  this.classList.toggle('open');
+  var m=document.getElementById('mobileMenu');
+  m.style.display=this.classList.contains('open')?'flex':'none';
+});
+window.addEventListener('scroll',function(){
+  document.getElementById('mainNav').style.boxShadow=window.scrollY>20?'0 8px 40px rgba(0,0,0,0.8)':'none';
+},{passive:true});
+</script>
+</body>
+</html>
