@@ -247,11 +247,10 @@ footer{border-top:1px solid var(--border);padding:60px 40px 40px;max-width:var(-
 <script>
 function handleSubmit(e){
   e.preventDefault();
-  // TO ACTIVATE: replace YOUR_FORM_ID below and uncomment
-  // fetch('https://formspree.io/f/YOUR_FORM_ID',{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}})
-  //   .then(function(r){if(r.ok){showSuccess()}});
-  showSuccess(); // remove this line once Formspree is connected
+  fetch('https://formspree.io/f/mkoqrlpo',{method:'POST',body:new FormData(e.target),headers:{'Accept':'application/json'}})
+    .then(function(r){if(r.ok){showSuccess()}});
 }
+
 function showSuccess(){
   document.getElementById('contactForm').style.display='none';
   document.getElementById('formSuccess').style.display='block';
